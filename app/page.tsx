@@ -1,21 +1,22 @@
 import Image from "next/image";
+import NavBar from "./components/NavBar";
+import Sobre from "./components/Sobre";
+import { Amatic_SC } from 'next/font/google'
+
+const amatic = Amatic_SC({
+  subsets: ['latin'],
+  weight: ['400', '700']
+})
 
 export default function Home() {
   return (
     <div>
-      <header className="w-full fixed top-0 left-0 bg-white">
-        <div className="container flex justify-evenly items-center ml-auto mr-auto pr-4 pl-4 min-h-12">
-          <a href='#inicio'>Início</a>
-          <a href='#sobre'>Sobre</a>
-          <a href='#agenda'>Agenda</a>
-          <a href='#contatos'>Contatos</a>
-        </div>        
-      </header>
-      <main>
+      <NavBar/>
+      <main className="text-#d4d4d4">
         <div className="container ml-auto mr-auto pr-4 pl-4">
           <div 
             id='inicio'
-            className="min-h-screen flex items-center flex-col mt-12">            
+            className="min-h-screen flex flex-col items-center justify-center">            
             <div className="mb-6">
               <Image
                 src="/band.jpg"
@@ -25,24 +26,14 @@ export default function Home() {
                 priority
               />
             </div>
-            <h1 className="text-6xl">
-              Grupo Forrofonico
+            <h1 className={`${amatic.className} text-9xl font-black`}>
+              Grupo Forrofônico
             </h1>
           </div>
-          <div 
-            id='sobre'
-            className="min-h-screen flex items-center flex-col">
-            <div>
-              O que sabemos sobre o grupo???
-
-              <div>
-                A banda
-              </div>
-            </div>
-          </div>
+          <Sobre />
           <div 
             id='agenda'
-            className="min-h-screen flex items-center flex-col mt-12">
+            className="min-h-screen flex flex-col items-center justify-center">
             <div>
               Toda a agenda da banda
 
