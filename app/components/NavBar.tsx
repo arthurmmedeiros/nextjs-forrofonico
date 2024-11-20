@@ -108,9 +108,9 @@ const NavBar = () => {
                             priority
                             className='mr-2'
                         />
-                        <div className={`${amatic.className} font-bold text-2xl`}>
+                        <Link href='#inicio' className={`${amatic.className} font-bold text-2xl`}>
                             Forrofônico
-                        </div>
+                        </Link>
                     </div>
                     <div className="hidden md:flex items-center">
                         <NavLinks isMobile={false}/>
